@@ -66,13 +66,13 @@
 
             <aside>
                 <header>
-                    <h3>Mis tecnologias favoritas</h3>
+                    <h3>Mis tecnologias <span>favoritas</span></h3>
                 </header>
 
-                <ol>
+                <ol type="1" reversed start="10">
                     <li>HTML</li>
                     <li>CSS</li>
-                    <li>JavaScript</li>
+                    <li value="5">JavaScript</li>
                     <li>Node.js</li>
                 </ol>
             </aside>
@@ -122,6 +122,35 @@
 
                         </footer>
                 </article>
+            </section>
+            <section>
+                <h2>Formulario de contacto</h2>
+
+                <form method="psot" action="/"> <!--Metodo es que es lo que hara y action es el URL a donde se envia-->
+                    <fieldset>
+                        <legend>Informacion personal</legend>
+                        <div>
+                            <label>Nombre:
+                                <input type="text" name="name" placeholder="Miguel Angel Duran" required>
+                            </label>
+                        </div>
+                        <div>
+                            <label>Email:
+                                <input type="email" name="email" placeholder="example@mail.com" required>
+                            </label>
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Informacion Adicional</legend>
+                        <div>
+                            <label>Telefono:
+                                <input type="tel" name="tel" placeholder="+12324542277" required pattern="[0-9]{9}">
+                            </label>
+                        </div>
+                    </fieldset>
+                    <input type="submit" value="Enviar contacto">
+                </form>
             </section>
         </main>
         <footer>
