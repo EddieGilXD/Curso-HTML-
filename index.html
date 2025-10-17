@@ -27,17 +27,38 @@
                 background: #f0f0f0;
             }
         </style>
-
     </head>
     <body>
         <header>
             <h1>Portfolio de @MiDudev 👨‍💻</h1>
+            
             <nav>
                 <a href="#experiencia">Experiencia</a>
                 <a href="#proyectos">Proyectos</a> <!--Enlaces intenos-->
                 <a href="https://twitch.tv/midudev" target="_blank" rel="noreferrer">Twitch</a>
             </nav>
         </header>
+        
+        <dialog id="dialog">
+            <h1>Sabias que puedes abrir una modal asi?</h1>
+            <p>Y estotalmente nativo!</p>
+            <button id="hide">Cerrar modal</button>
+        </dialog>
+
+        <button id="show">Ver mas informacion</button>
+
+        <script>
+            window.show.addEventListener('click', () => {
+                window.dialog.showModal()
+            } )
+        </script>
+        <script>
+            window.hide.addEventListener('click', () => {
+                window.dialog.close()
+            })
+        </script>
+
+
         <main>
             <p>+15 años de experiencia como 
                 <strong>Ingeniero de sofware</strong>. 
@@ -53,6 +74,7 @@
 
             <a download href="https://midu.dev/advantage-twitch.webp">
                 <img 
+                    loading="lazy"
                     id="photo-image"
                     width="200" 
                     height="200" 
@@ -81,6 +103,8 @@
                 Haz click aqui
             </button>
 
+            <video src=""></video>
+            <iframe style="width:100%; aspect-ratio:16/9;" src="https://www.youtube.com/embed/3nYLTiY5skU?si=w8Af0MuC_5euVeQt" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             <section>
                 <article>
                     <header>
@@ -123,10 +147,33 @@
                         </footer>
                 </article>
             </section>
+
+            <section>
+                <h2>Preguntas frecuentes</h2>
+                <details>
+                    <summary>Que estudio tienes?</summary>
+                    <p>Estudie en la unviersidad de Vilaniva ingenieria de informatica durante 5 años</p>
+                </details>
+            </section>
+
+            <section>
+                <details>
+                    <summary>Cuales son tus hobbies?</summary>
+                    <p>Me gusta mucho el deporte, sobre todo el futbol y el baloncesto</p>
+                </details>
+            </section>
+
+            <section>
+                <details>
+                    <summary>Cual es tu lenguaje favorito?</summary>
+                    <p>Me encata JavaScript, es un lenguaje muy versatil y con el que se pueden hacer muchas cosas</p>
+                </details>
+            </section>
+
             <section>
                 <h2>Formulario de contacto</h2>
 
-                <form method="psot" action="/"> <!--Metodo es que es lo que hara y action es el URL a donde se envia-->
+                <form method="post" action="/"> <!--Metodo es que es lo que hara y action es el URL a donde se envia-->
                     <fieldset>
                         <legend>Informacion personal</legend>
                         <div>
@@ -151,6 +198,31 @@
                     </fieldset>
                     <fieldset>
                         <legend>Otros</legend>
+                        <div>
+                            <label for="why">Por que quieres contactarnos</label>
+                            <select name="why" id="why">
+                                <option value="1">Trabjo</option>
+                                <option value="2">Duda</option>
+                                <option value="3">Mas informacion</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="terms">Acepta los terminos y condiciones?</label>
+                            <input type="checkbox" name="terms" id="terms" required>
+                        </div>
+
+                        <div>
+                            <datalist id="languages">
+                                <option value="JavaScript">JavaScript</option>
+                                <option value="Phyton">Phyton</option>
+                                <option value="Java">Java</option>
+                                <option value="C#">C#</option>
+                            </datalist>
+                            <label>Con que lenguaje quieres que te ayude?
+                                <input list="languages" name="languages">
+                            </label>                            
+                        </div>
                     </fieldset>
                     <input type="submit" value="Enviar contacto">
                 </form>
